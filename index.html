@@ -1,0 +1,911 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- utf-8 works for most cases -->
+<meta name="viewport" content="width=device-width">
+<!-- Forcing initial-scale shouldn't be necessary -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Use the latest (edge) version of IE rendering engine -->
+<title>XTBlock</title>
+<!-- The title tag shows in email notifications, like Android 4.4. -->
+
+<!-- Please use an inliner tool to convert all CSS to inline as inpage or external CSS is removed by email clients -->
+<!-- important in CSS is used to prevent the styles of currently inline CSS from overriding the ones mentioned in media queries when corresponding screen sizes are encountered -->
+
+<!-- CSS Reset -->
+<style type="text/css">
+/* What it does: Remove spaces around the email design added by some email clients. */
+      /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+html, body {
+	margin: 0 !important;
+	padding: 0 !important;
+	height: 100% !important;
+	width: 100% !important;
+}
+/* What it does: Stops email clients resizing small text. */
+* {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+/* What it does: Forces Outlook.com to display emails full width. */
+.ExternalClass {
+	width: 100%;
+}
+/* What is does: Centers email on Android 4.4 */
+div[style*="margin: 16px 0"] {
+	margin: 0 !important;
+}
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+table, td {
+	mso-table-lspace: 0pt !important;
+	mso-table-rspace: 0pt !important;
+}
+/* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+table {
+	border-spacing: 0 !important;
+	border-collapse: collapse !important;
+	table-layout: fixed !important;
+	margin: 0 auto !important;
+}
+table table table {
+	table-layout: auto;
+}
+/* What it does: Uses a better rendering method when resizing images in IE. */
+img {
+	-ms-interpolation-mode: bicubic;
+}
+/* What it does: Overrides styles added when Yahoo's auto-senses a link. */
+.yshortcuts a {
+	border-bottom: none !important;
+}
+/* What it does: Another work-around for iOS meddling in triggered links. */
+a[x-apple-data-detectors] {
+	color: #1155cc !important;
+}
+	h1, h2, h3, h4 {line-height: 1.2em;}
+	
+td { 
+    padding: 5px;
+}
+
+
+/* general styling */
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+}
+
+	
+</style>
+
+<!-- Progressive Enhancements -->
+<style type="text/css">
+/* What it does: Hover styles for buttons */
+.button-td, .button-a {
+	transition: all 100ms ease-in;
+}
+.button-td:hover, .button-a:hover {
+	background: #555555 !important;
+	border-color: #555555 !important;
+}
+	a{color: #1155cc !important;}
+
+/* Media Queries */
+@media screen and (max-width: 480px) {
+/* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+.fluid, .fluid-centered {
+	width: 100% !important;
+	max-width: 100% !important;
+	height: auto !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+/* And center justify these ones. */
+.fluid-centered {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+/* What it does: Forces table cells into full-width rows. */
+.stack-column, .stack-column-center {
+	display: block !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	direction: ltr !important;
+}
+/* And center justify these ones. */
+.stack-column-center {
+	text-align: center !important;
+}
+/* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+.center-on-narrow {
+	text-align: center !important;
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	float: none !important;
+}
+table.center-on-narrow {
+	display: inline-block !important;
+}
+	.padding{padding: 10px !important;}
+	.small{font-size: 13px;}
+}
+</style>
+</head>
+<body width="100%" bgcolor="#ffffff" style="margin: 0;" yahoo="yahoo">
+<table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;">
+  <tr>
+    <td><center style="width: 100%;">
+	<div class="padding" style="max-width: 800px; padding: 30px"> 
+          <!--[if (gte mso 9)|(IE)]>
+            <table cellspacing="0" cellpadding="0" border="0" width="800" align="center">
+            <tr>
+            <td>
+            <![endif]--> 
+          
+                   <!-- Email Body : BEGIN -->
+          <table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#ffffff" width="100%" style="max-width: 800px; border: thin solid #000000;">
+            
+            <!-- Hero Image, Flush : BEGIN -->
+            <tr>
+              <td class="full-width-image" align="center"><img src="images/XTblock-logo.png" width="400" alt="alt_text" border="0"  style="width: 40%;  height: auto; padding: 50px 0px;"></td>
+            </tr>
+            <!-- Hero Image, Flush : END --> 
+            
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td class="padding" style="padding: 20px 180px; text-align: center; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #000000;"> <a style="text-decoration: none; color:#000000 " href="https://xtblock.io" target="_blank">https://xtblock.io</a><br><br>
+                      <h1>WHITEPAPER</h1>
+						<p>XTblock is a high-performance blockchain network that can transform every industry, and create a bold new decentralised Bot and AI computing economy.</p>
+						<p>V1.0<br>
+							[Latest Update: 19th July, 2021]<br><br>
+							Proposer:<br>
+							Anh Le<br><br>
+							Reviewed by:<br>
+							Leonard Rego, Wayne Dsouza</p>
+						<p>–––––––––––––––––––</p>
+                      <!-- Button : END --></td>
+                  </tr>
+                </table></td>
+            </tr>
+            
+           <!-- 1 Column Text : BEGIN -->
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td class="padding" style="padding: 0px 50px; text-align: left; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #000000;">
+						<h2>Introduction</h2>
+						<p>Several blockchain platforms already exist, so why build another one? Because this endeavour would be immensely valuable if the problems that have continued to plague blockchain, such as low transaction speeds, lacklustre computational power, limited scalability and high latency could be solved.</p>
+						
+						<p>XTblock’s unique time sharding architecture, as well as several other enhancements, have been designed and developed to solve precisely these problems.</p>
+						
+						<p>Let’s look at why this is important, by way of a simple analogy. If you consider a computer network – in this case a blockchain network – to be a ‘brain’, it would follow that a healthier brain has better connections and greater processing power. And while the human brain is similar to, but not necessarily the same as, a computer network, the premise is fundamentally the same: That information (i.e. data) fed to a more capable blockchain network allows that blockchain not only to verify blocks of information, but also to perform powerful computing operations.</p>
+						
+						<p>Delivering a high-performance blockchain such as this has massive positive implications for every industry: It would take the key advantages that characterise a blockchain network, such as immutability, security, transparency and decentralisation – and greatly enhance this proposition with high computational power, low latency and rapid scalability. This means that the best of both worlds – the benefits of powerful centralised networks and the advantages of blockchain – can now be delivered through a single, even more capable platform, like never before.</p>
+						
+						<p>Importantly, XTblock will also power two critical and high-potential realms of technology: Decentralised Artificial Intelligence and Bot computing.</p>
+						
+						<h2>Decentralised Artificial Intelligence</h2>
+						
+						<h4>Artificial Intelligence (AI) technology in its present state is largely centralised, which means it is limited by the power, mobility and connectivity of its host network.</h4>
+						
+						<p>“<strong>Distributed Artificial Intelligence (dAI)</strong>, also called Decentralised Artificial Intelligence, is a subfield of <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank">artificial intelligence</a> research dedicated to the development of distributed solutions for problems. dAI is closely related to, and a predecessor of, the field of <a href="https://en.wikipedia.org/wiki/Multi-agent_system/" target="_blank">multi-agent systems</a>” [Source: <a href="https://en.wikipedia.org/wiki/Distributed_artificial_intelligence" target="_blank">Wikipedia</a>]</p>
+						
+						<p>Decentralised Artificial Intelligence (dAI) is the next leap forward for Artificial Intelligence and is an approach to solving AI’s complex learning, <a href="https://en.wikipedia.org/wiki/Automated_planning" target="_blank">planning</a>, and decision making problems – especially if they require large amounts of data, by distributing the problem to autonomous processing nodes (agents). It exploits large scale computation and spatial distribution of computing resources. These properties allow it to solve problems that require the processing of very large data sets.</p>
+						
+						<p>As explained in a paper by Don Tapscott and Anjan Vinod, the Blockchain Research Institute and Blockchain at Berkeley, “Imagine a massive number of nodes pooling their data, contributing to a data commons of sorts, rather than dealing with the very siloed and centralized pools of data that exist now.”</p>
+						
+						<p>They go on to say, “As people and things generate more data, storing those data in a decentralised manner can be challenging. Public blockchains are very expensive for storing vast amounts of data; and beyond the cost, quickly retrieving the data can be computationally intensive. Computing systems will need to retrieve, analyze, and compute algorithms in a very short period… Current blockchain solutions do not offer the scalability required for such types of aggregation and computation”</p>
+						
+						<p>This is where XTblock is different. It presents cutting-edge possibilities in AI through the creation of a new type of distributed architecture that runs on our blockchain network.</p>
+						
+						<p>It is the intersection of two technologies that are individually revolutionary, but which can change the course of business, industry and the world at large.</p>
+						
+						<p>By solving the problems of scalability and performance, XTblock aims to realise this vision for Distributed Artificial Intelligence in a manner that is truly viable.</p>
+						
+						<p>For more information, please read about our dAI architecture in our presentation on XTblock’s blockchain network: <a href="https://github.com/xtblock/dai-research-development" target="_blank">https://github.com/xtblock/dai-research-development</a></p>
+						
+						<h2>Decentralised Bot Computing</h2>
+						<p>A report titled <a href="https://www.imperva.com/blog/how-bots-impact-global-economy/" target="_blank">‘The Underground Bot Economy: How Bots Impact the Global Economy’ (imperva.com)</a> states “Data from our <a href="https://www.imperva.com/blog/bot-traffic-report-2015/" target="_blank">“2015 Bot Traffic Report”</a> reveals that bots account for nearly half of all internet traffic (49 percent). That’s an amazing statistic when you consider the fact that there are more than 3 billion internet users in the world. Some of the <a href="https://www.imperva.com/blog/know-your-top-10-bots/" target="_blank">bots best known to the general public</a> power search engines like Google, Bing, and DuckDuckGo.”</p>
+						
+						<p>In a simple yet helpful description of bots on their website, Botnerds explains that “Bots are software programs that perform automated, repetitive, predefined tasks. These tasks can include almost any interaction with software that has an API. The tasks can
+						range from making dinner reservations to getting an update on a support request, to checking competitors’ prices on their websites. You’ll notice that the definition of bots does not necessarily include the concepts of artificial intelligence (AI) or machine
+						learning (ML)”</p>
+						
+						<p>This is the era of hyperspecialization, for both, humans and technology. In technology terms, we are focused on empowering specialised bots by allowing them to access the massive computational capabilities of our blockchain network.</p>
+						
+						<p>Here’s another simple analogy to explain this concept: Just as a doctor uses his education and experience to treat patients, a bot uses its algorithms to perform certain specialised tasks. The doctor, however, relies on complex diagnostic equipment to help with diagnosis; i.e. he relies on the rapid data processing capabilities of the equipment to generate results that help him make quality analyses, decisions or medical recommendations. The more powerful the equipment and the greater its capabilities, the better the results – and the more informed he is when it comes to analysing, deciding and recommending.</p>
+						
+						<p>In the same way, XTblock will enable bots to compute with large data volumes by leveraging its considerable computing power using, potentially, hundreds or thousands of nodes on the decentralised network. This will allow the bots to execute even complex tasks in parallel, and in a timely manner.</p>
+						
+						<p>This also applies to blockchain oracles, which will be able to take both on-chain and off-chain information to process it on XTblock.</p>
+						
+					  	<p>Find more information on bots here:<br>
+						<strong><a href="http://botnerds.com/what-are-bots/" target="_blank">What Are Bots? Understanding the Bot Landscape | botnerds.com</a></strong></p>
+						
+						<p>Further reading – Good bots and bad bots:<br>
+						<strong><a href="https://www.cloudflare.com/learning/bots/what-is-a-bot/" target="_blank">What Is a Bot? | Bot Definition | Cloudflare</a></strong></p>
+						
+						<h2>A brief background and XTblock’s core premise</h2>
+						
+						<p>Blockchain technology is a type of distributed ledger that was originated with the intention of obviating the need of trusted intermediaries, given that these intermediaries often exploit the information of the ledger, use it inefficiently, or corrupt it; instead of relying on these trusted intermediaries, all participants of the network are allowed to maintain their own synchronised copy.</p>
+
+						<p>Today, blockchain infrastructure is huge and uses high-performance computers (CPU/ GPU/ RAM/ Storage/ Network) which are also good for algebraic calculations and fit for computing requirements for AI; however, existing blockchain implementations only use blockchain nodes and networks for the simple purpose of block verification.</p>
+
+						<p>XTblock’s core premise is that the same architecture, miners and infrastructure can be used for distributed problem solving (DPS), like AI computing services and Bot computing services.</p>
+
+						<p>As part of the results we aim to generate, by providing Decentralised Bot Computing (dBot) and Decentralised AI Computing (dAI) services, we also aim to create valuable Bots with distributed computing solutions, variably with or without AI solutions on our blockchain platform. We call this “<strong>The dBot Economy</strong>”.</p>
+						
+						<h4>At its core, what we are building is a hyper-capable network. To facilitate the functioning of this network, a group of bots, i.e. a ‘bot set’, will help to create a wide variety of applications and services. This could vary from a high performance blockchain network to peer-to-peer video streaming services, AI computing services, bot computing services… the possibilities are virtually limitless.</h4>
+						
+						<h2>Table of contents</h2>
+						<ol style="font-weight: bold">
+				  			<li>Executive summary</li>
+				  			<li>Solution and Business Model</li>
+				  			<li>Use Cases</li>
+				  			<li>Incubation</li>
+				  			<li>Achievements</li>
+				  			<li>Tokenomics</li>
+				  			<li>Competitive Landscape/Market</li>
+				  			<li>Growth Opportunities</li>
+				  			<li>Roadmap</li>
+				  			<li>Marketing</li>
+				  			<li>Fund Distribution</li>
+				  			<li>The Team</li>
+				  		</ol>
+						
+						<h2>1. Executive Summary</h2>
+						
+						<p>Blockchain is powerful and has great potential, and the validated market size and growth rate are very promising, but the CapEx and OpEx are still too high, which prevents its widespread adoption (in addition to other issues related to scalability, speed, latency etc., which continue to challenge current blockchain solutions).</p>
+
+						<p>We have developed a multi-chain, high-performance, scalable blockchain technology that effectively addresses the key issues facing blockchain today, such as speed, scalability and latency. Our blockchain is made available through a subscription-based shared and variable blockchain speed business model. Importantly, this also solves the high-cost problem of deploying and maintaining blockchain applications.</p>
+
+						<p>As mentioned earlier, blockchain infrastructure is massive and widespread, and uses high performance computers (CPU/ GPU/ RAM/ Storage/ Network) which are also good for algebraic calculations and a good fit for distributed computing requirements. Therefore, there is little sense in using blockchain networks merely for block verification–with the same architecture and the same miners, we can use this infrastructure for AI computing services, such as distributed problem solving, federated training and distributed functioning. The potential, therefore, far exceeds the current use of blockchain networks today, with near-limitless possibilities on the horizon.</p>
+
+						<p>Below are the factors required for distributed problem solving in general, and specifically for AI computing, that must be kept in mind – and which, importantly, XTblock aims to fulfil:</p>
+						
+						<h3>High computing capacity</h3>
+						
+						<p>Organisations need high performance computing resources, including CPUs and GPUs, to explore the possibilities of AI. As experiments are still underway in most of the organisations exploring AI, the general approach is to build a strong CPU-based environment to handle basic AI functions. But currently, the existing CPU-based computing might not be enough to handle the multiple large initiatives as required by the deep learning process. To deploy scalable neural network algorithms and manage the high-performance networks and storage, computing capacity and density of data handling need to improve.</p>
+						
+						<h3>Storage capacity</h3>
+						
+						<p>Storage capacity is the fundamental requirement for any AI infrastructure, as there is a need to scale storage as the volume of data grows. But an organisation needs to ascertain the level and extent of storage they would require, for planning their experiments with AI. Companies need to handle their expansion plans and manage their storage capacity to be able to make real-time decisions, as AI applications can help to make better decisions when they’re exposed to more data.</p>
+							
+						<h3>Networking infrastructure</h3>	
+						
+						<p>Seamless networking is an essential component of AI infrastructure. As scalability is a high priority, an organisation would require a high-bandwidth, low-latency network. Deep learning algorithms depend on communication, and as AI experiments progress and expand, network systems need to keep pace. For this expansive service, it is necessary to have an expert infrastructure provider who can handle the service wrap and technology globally, and also ensure that the stack is distributed and consistent in all places.</p>
+							
+						<h3>Security</h3>
+							
+						<p>As AI is used to handle sensitive data in sectors such as healthcare, finance and beyond, securely maintaining the personal data becomes a bigger challenge. These pieces of information are extremely vulnerable in nature; and if not managed well, it can be detrimental to any organisation if exploited by malicious actors. Besides, if any unwanted and unnecessary data are added to the AI system, it would lead to incorrect decision making and detrimental inference. Hence, highly secure AI infrastructure is required to ensure that the data is protected.</p>
+							
+						<h3>Cost-effective solutions</h3>
+						
+						<p>This is just the beginning of AI model development, as research progresses slowly across the world. AI will become more complex, and the associated development costs will correspondingly be very expensive. Organisations must work to ascertain the most cost-effective solutions to continue with their process and growth. As organisations using AI must maintain their momentum and growth, they have to depend largely on improved networks, servers, and storage infrastructure to enable the use of this technology. The whole process is prohibitively expensive. Therefore, it would be incumbent upon them to choose service providers carefully and thoughtfully – providers who can offer cost-effective dedicated servers of a high standard. This would help them to effectively capitalise on the opportunity for high performance, and help them to plan, decide and invest intelligently in AI infrastructure.</p>
+						<p><a href="https://www.technology-innovators.com/infrastructure-requirements-for-artificial-intelligence/" target="_blank">Source: Technology-innovators.com</a></p>
+							
+						<h2>2. Solution and Business Model</h2>
+
+						<p>XTblock’s core proposition is a high-performance, easily adoptable blockchain platform to revolutionise every business and industry</p>
+
+						<p>For those who primarily operate in any of these industries or sectors…</p>
+
+						<ul>
+						<li>Banking, Financial Services & Insurance</li>
+						<li>Energy & Utilities</li>
+						<li>Government</li>
+						<li>Healthcare and Life Sciences</li>
+						<li>Manufacturing</li>
+						<li>Telecom</li>
+						<li>Media & Entertainment</li>
+						<li>Retail & Consumer Goods</li>
+						<li>Travel and Transportation... (etc.)</li>
+						</ul>
+						<p>These are some of the biggest data and computing challenges:</p>
+
+						<p><strong>Data Security</strong> – Average cost of a data breach in 2020 is $3.86 million*, with several breaches costing over $50 million</p>
+
+						<p><strong>Data Processing and Storage</strong> – Very significant CapEx and OpEx amounting to billions of dollars is spent each year</p>
+
+						<p><strong>Scalability</strong> – Centralised systems are hard to scale (up or down), and require considerable investments and technical resources</p>
+
+						<p><strong>Data Traceability and Transparency</strong> – Centralised IT systems are not immutable, so records can be altered or falsified</p>
+
+						<p><em>Source: *IBM and the Ponemon Institute</em></p>
+
+						<h3>Blockchain is a far superior way to address many of these issues, because:</h3>
+
+						<ul>
+						<li>It makes it difficult or extremely hard to change, hack or cheat the system</li>
+						<li>Data cannot be held hostage for a ransom</li>
+						<li>Blockchain also effectively addresses issues related to network disasters, human error, and software bugs</li>
+						</ul>	
+							
+						<h3>So what is stopping many industries and enterprises from adopting blockchain?</h3>	
+							
+						<p>BMW, Credit Suisse, De Beers, Honeywell, HSBC, Nestlé, Samsung and others have already adopted blockchain, based on its current capabilities.</p>	
+						
+						<p>However, current blockchain platforms have certain limitations:</p>
+						
+						<ul>
+						<li>Cannot handle high transaction volumes</li>
+						<li>Cannot scale effectively with an enterprise’s needs</li>
+						<li>High costs to develop, deploy and maintain blockchain applications</li>
+						</ul>
+						
+						<p>Platforms such as IBM’s Hyperledger, Ethereum and others are all trying to solve the problem.</p>
+						
+						<h3>XTblock’s unique capability and approach</h3>
+						
+						<p>In addition to the standard benefits of blockchain, XTblock can deliver:</p>
+						
+						<h3>Low cost</h3>
+						
+						<p>Because of our subscription model, there will be no CapEx that our clients need to commit to (unless a private network setup is requested). Subscriptions will allow several times lower costs than when using other blockchains. On-premise networks are also possible for large corporations at competitive pricing. Our Platform Terminal App will help to reduce DevOps costs</p>
+						
+						<h3>Performance</h3>
+						
+						<p>Unlike other platforms, XTblock’s architecture is fully scalable to deliver the computing performance our clients need, which can be attributed to our supercomputer architecture – simply subscribe to higher TPS speeds, or drop to lower speeds through a few clicks in the Platform Terminal App without the need to configure the entire network again (to save time and cost).</p>
+						
+						<h3>Quick and simple</h3>
+						
+						<p>Using the Platform Terminal App means there is no need for complex network configuration as seen with other platforms. Developers will want to (and love to) use the Platform Terminal App, because it makes DevOps easier, simpler and faster – with powerful features and an easy-to-use interface.</p>
+						
+						<h3>Our Platform Terminal App</h3>
+						
+						<p>Our Platform Terminal allows you to flexibly define Data Structures and Business Flows with theSmart Contract programming function on our platform.</p>
+						
+						<h3>The differences between the Competition and XTblock</h3>
+						
+						<div style="overflow-x:auto;">
+					  <table border="1" style="overflow: auto; border-collapse: collapse; border-spacing: 0; width: 100%; vertical-align: top;">
+						  <tbody>
+							<tr>
+							  <td style="padding: 10px;" valign="top"><strong>Competitors (BaaS)</strong>:<br> 
+						      The tech giants</td>
+							  <td style="padding: 10px;" valign="top"><strong>XTblock (BSP – Blockchain Service Provider)</strong></td>
+							</tr>
+							<tr>
+							  <td style="padding: 10px;" valign="top"> - Sell Blockchain Nodes – Cloud Hosting<br> 
+								  - Limited Scalability</td>
+							  <td style="padding: 10px;" valign="top">- Sell blockchain speeds via subscription (like an ISP sells bandwidth packages)<br>- Scalable</td>
+							</tr>
+							  <tr>
+							  <td style="padding: 10px;" valign="top"><em>Complex DevOps Steps:</em><br>
+								<ol>
+								  <li>Purchase nodes (expensive)</li>
+								  <li>Configure network</li>
+								  <li>Build blockchain application</li>
+								  <li>Deploy application to network</li>
+								  <li>Maintain network with sys-admin</li>
+								  <li>Reconfiguration required to scale up/down</li>
+								  </ol>
+							    </td>
+							  <td style="padding: 10px;" valign="top"><em>Simpler DevOps Steps:</em><br>
+								<ol>
+								  <li>Purchase affordable speed packages</li>
+								  <li>Build blockchain application</li>
+								  <li>Publish application</li>
+								  <li>Scale up/down as per business needs (no reconfiguration required)</li>
+								  </ol>
+								  Various speed packages will be available from XTblock, and we believe that there is a 90% possibility that costs can be lowered, often very significantly.
+								  </td>
+							</tr>
+						</tbody>
+					  </table>
+						</div>
+
+					  <h3>XTblock’s Subscription-based Business Model</h3>
+							<p><em>*Tentative Pricing which is subject to be changed due to market demand.</em></p>
+						<div style="overflow-x:auto;">
+						<table border="1" style="overflow: auto; border-collapse: collapse; border-spacing: 0; width: 100%; vertical-align: top;">
+						  <tbody>
+							<tr>
+							  <td style="padding: 10px;" valign="top"><strong>STARTER PACKAGES</strong></td>
+							  <td style="padding: 10px;" valign="top"><strong>SHARED PACKAGES</strong></td>
+								<td style="padding: 10px;" valign="top"><strong>DEDICATED PACKAGES</strong></td>
+							</tr>
+							  <tr>
+							  <td style="padding: 0px;" valign="top">
+								<ul>
+								  <li>5 XTT for 5tps/mo</li>
+								  <li>10 XTT for 10tps/mo</li>
+								  <li>20 XTT for 20tps/mo</li>
+								  <li>50 XTT for 50tps/mo</li>
+							    </ul>
+							    </td>
+							  <td style="padding: 0px;" valign="top">
+								<ul>
+								  <li>100 XTT for 100tps/mo</li>
+								  <li>200 XTT for 200tps/mo</li>
+								  <li>500 XTT for 500tps/mo</li>
+								  <li>1k XTT for 1k tps/mo</li>
+								  <li>2k XTT for 2k tps/mo</li>
+								  <li>3k XTT for 3k tps/mo</li>
+								  <li>4k XTT for 4k tps/mo</li>
+								  <li>5k XTT for 5k tps/mo</li>
+								  <li>…</li>
+								  <li>20k XTT for 20k tps/mo</li>
+							    </ul>
+							    </td>
+							    <td style="padding: 0px;" valign="top">
+								<ul>
+								  <li>1k XTT for 100tps/mo</li>
+								  <li>2k XTT for 200tps/mo</li>
+								  <li>5k XTT for 500tps/mo</li>
+								  <li>10k XTT for 1k tps/mo</li>
+								  <li>20k XTT for 2k tps/mo</li>
+								  <li>30k XTT for 3k tps/mo</li>
+								  <li>40k XTT for 4k tps/mo</li>
+								  <li>50k XTT for 5k tps/mo</li>
+								  <li>…</li>
+								  <li>1M XTT for 100k tps/mo</li>
+								  </ul>
+							    </td> 
+							</tr>
+						  </tbody>
+					  </table>
+						</div>
+						<ol>
+							<li>‘XTT’ refers to XTblock’s token, which is required to purchase services on the XTblock blockchain network</li>
+							<li>Packages are dynamic and limited by the state of every network.</li>
+							<li>While the above shows subscription rates for shared services, a private blockchain network can also be set up on request.</li>
+							<li>To provide a holistic benefit to our network nodes’ operators, we also have Network Routing and Network Storage fees which will be determined by community voting at a later stage.</li>
+						</ol>
+						
+						<h2>3. Use Cases</h2>
+						<h3>Potential use case examples:</h3>
+					  <h4>Example for Large-Enterprises</h4>
+						<p>While XTblock’s blockchain platform can be used by developers, small businesses and global corporations alike, this example illustrates its ability to solve some of the toughest technological challenges of multinational corporations. It describes the solution currently in use, and the advantages of using XTblock as an alternative.</p>
+
+						<p><strong>Organisation</strong>: International Food & Beverage Giant, employs 250,000 people worldwide</p>
+
+						<p><strong>Uses blockchain for</strong>: Food supply chain management</p>
+						
+					  	<p><strong>How the organisation is leveraging the benefits of blockchain</strong>: <br>
+					  	One product the F&B giant uses blockchain technology for is a premium coffee brand. Through blockchain recorded data, buyers of the coffee will now be able to trace the coffee back to its different origins. Importantly, this transparency, traceability and trackability also enhance supply chain efficiencies, while helping to ensure freshness, sustainability, reduction of waste and prevention of food fraud.</p>
+
+					  	<p><strong>How it works</strong>:<br>
+					  	To use the solution to trace food products, data on food products needs to be uploaded to the network by participants. Additionally, data sources can be added to extract custom details. For instance, cold chain data and analyses can be pulled from temperature and humidity sensors, IoT devices, RFID, and more. At any given point in time, the number of ‘transactions’ (an event that updates the data store) could number in the thousands, depending on how many entries are being uploaded to the network and how much data is being fed into the network by IoT devices, RFID etc. And this is for just one product. Several products on the blockchain would require, potentially, tens or hundreds of thousands of transactions per second.</p>
+
+					  	<p><strong>Costs</strong>:<br>
+					  	A solution such as this would currently cost several hundred thousands of dollars – or potentially millions of dollars – per month.</p>
+						
+						<p>But the fact that XTblock has developed, very importantly, a scalable architecture, means that the volume of transactions desired can scale dramatically to tens or even hundreds of thousands of tps, cost effectively.</p>
+
+						<h3 style="color: #324174">Potential Example of Use of XTblock Distributed AI and Blockchain (Traffic Management in Smart City)</h3>
+						 
+                    </td>
+                  </tr>
+           	<tr>
+			  <td class="full-width-image" align="center"><img src="images/blockchain.jpg" width="600" alt="alt_text" border="0"  style="width: 90%;  height: auto; padding: 0px 0px;"></td>
+			</tr>
+                </table></td>
+            </tr>
+			  
+			  <tr>
+              <td><table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td class="padding" style="padding: 0px 50px; text-align: left; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #000000;"> 
+						<p><strong>Organisation</strong>: Department of Transport / Division of Traffic Engineering and Operations (Public Sector)</p>
+						
+						<p><strong>Can use blockchain for</strong>: Vehicle tracking, live vehicle behaviour monitoring, fuel consumption analysis etc.</p>
+						
+						<p><strong>Are other blockchain and AI solutions being used currently?</strong>: With other blockchain platforms, this is in exploratory stages only, due to their inability to manage such functions (considering their challenges related to transaction volumes, scalability, high latency etc.). Such platforms can primarily only use blockchain to record transaction data. However, XTblock’s high-performance blockchain, coupled with its Decentralised Artificial Intelligence (dAI) and Decentralised Bots’ capabilities, can enable advanced functionality.</p>
+						
+						<p><strong>What could XTblock provide in terms of high-performance traffic monitoring and management?</strong>: With the right software, network, and hardware infrastructure, XTblock’s high performance blockchain can help with near-real-time collection of data for millions of vehicles, and can also bring about other benefits, including: • Vehicle route tracking • Live behaviour monitoring • Fuel consumption tracking • 100% network uptime • Enhanced cybersecurity, traffic monitoring and management system (e.g. preventing Denial of Service attacks).</p>
+						
+						<p><strong>In addition, the ability to enable Decentralised Artificial Intelligence and Decentralised Bots means we could get vehicles to communicate with each other to</strong>: • Avoid traffic congestion • Prevent accidents and collisions</p>
+						
+						<p><strong>How it works</strong>: With the right network infrastructure, XTblock could operate at 100,000 tps (and scale up if required) to gather data from traffic systems, IoT devices, vehicles, traffic signal networks and other such sources. Coupled with Decentralised Artificial Intelligence and Decentralised Bots it could deliver solutions perfectly suited to the requirements of Smart Cities or even existing traffic networks.</p>
+						
+						<p><strong>Costs</strong>: Further enhancing this transformational proposition is XTblock’s Decentralised Artificial Intelligence capabilities, which make it an enabler of governments’ vision for Smart Cities. Apart from the various benefits of deploying a system such as this, there would be very significant cost savings overall, when compared with the use of centralised IT solutions, thanks to our ability to generate significantly higher performance at much lower costs related to infrastructure, systems administration and other key variables</p>
+						
+					  <h3>Scientific use cases</h3>
+						
+						<p><strong>Demonstrating our Distributed AI capabilities via Gomoku and Chess</strong><br> 
+					  	To demonstrate the powerful capabilities of our dAI, our team has developed an AI algorithm for the popular Japanese board game with a huge branching factor, Gomoku, which will run on our blockchain network. Gomoku is one of the world’s greatest strategy board games, which is over 4000 years old, and features a high level of complexity. In addition, we are also working on a decentralised artificial intelligence version of chess.</p>
+						
+						<h3>Promising commercial use cases in development</h3>
+						
+						<p><strong>Our DeFi Platform</strong><br>
+						Comprising a Decentralised Exchange (DEX), Yield Farming, an NFT Marketplace and more, using XTblock as layer 2 for cross-chain DeFi.</p>
+
+						<p><strong>Cryptocurrency market analysis tool</strong><br>
+						An intelligent cryptocurrency market analysis tool – using XTblock's decentralised blockchain oracles to scan and analyse the entire crypto market parallelly and promptly.</p>
+
+						<p><strong>A Decentralised Video Streaming Platform</strong><br>
+						Relying on XTblock's blockchain network nodes and edge nodes for decentralised video streaming to serve millions of viewers simultaneously.</p>
+						
+						<h2>4. Incubation</h2>
+						
+                    </td>
+                  </tr>
+                </table></td>
+            </tr>
+			  
+			 <tr>
+			  <td class="full-width-image" align="center"><img src="images/smu.jpg" width="600" alt="alt_text" border="0"  style="width: 90%;  height: auto; padding: 0px 0px;"></td>
+			</tr> 
+            <!-- 1 Column Text : BEGIN --> 
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td class="padding" style="padding: 0px 50px; text-align: left; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #000000;"> 
+						<p><em>Singapore Management University (SMU) was launched in collaboration with the Wharton School of the University of Pennsylvania.</em></p>
+						
+						<h2>5. Achievements</h2>
+						
+					  	<p>Despite the challenges of limited funding, given the context of COVID-19, our team has nonetheless achieved exciting and promising results, including the completion of integral technology tests at different scales and in varied scenarios. These include a Testnet Soft-launch and a Stress Test in which the network was set up cross-border for true decentralisation, proving that our assumptions work exceptionally well at a practical level. Kindly review our published videos on XTblock’s Youtube channel, which will provide greater insights into the extent of our achievements:<br><br>
+					    <a class="small" href="https://youtube.com/channel/UCeu4t6j8Y6s4xhZh2hIsKrQ" target="_blank">https://youtube.com/channel/UCeu4t6j8Y6s4xhZh2hIsKrQ</a></p>
+						
+						<p>In summary, some notable achievements include:</p>
+						
+						<ul>
+						<li>Our Testnet Soft Launch in October 2020</li>
+						<li>Our Successful Stress Test in December 2020</li>
+						<li>A Distributed Problem Solving Solution with our blockchain network</li>
+						</ul>
+						
+						<h2>6. Tokenomics</h2>
+						
+						<p>XTT is the protocol and utility token that will enable developers and enterprises, as well as end-users, to purchase computing services and use dApp(s) on our high-performance blockchain platform.</p>
+						
+					  	<p>Please refer to the Tokenomics document on our Github: <br>
+					  	<a href="https://github.com/xtblock/tokenomics" target="_blank">https://github.com/xtblock/tokenomics</a></p>
+						
+						<h2>7. Competitive Landscape/Market</h2>
+	
+						<p>Please refer to the sub-section titled ‘The differences between the Competition and XTblock’, part of the ‘Solutions and Business Model’ section, for an overview of the BaaS (Blockchain-as-a-Service) model that various tech giants are currently offering. XTblock aims to disrupt this through the BSP (Blockchain Service Provider) subscription model. </p>
+						
+						<p>Kindly refer to “XTblock’s Subscription-based Business Model”, also part of the ‘Solutions and Business Model’ section.</p>
+						
+                    </td>
+                  </tr>
+                </table></td>
+            </tr>
+			  
+			<tr>
+			  <td class="full-width-image" align="center"><img src="images/market_share.jpg" width="600" alt="alt_text" border="0"  style="width: 90%;  height: auto; padding: 0px 0px;"></td>
+			</tr> 
+			  
+			  <tr>
+			  <td class="full-width-image" align="center"><img src="images/market_size.jpg" width="600" alt="alt_text" border="0"  style="width: 90%;  height: auto; padding: 0px 0px;"></td>
+			</tr> 
+			  
+			  <!-- 1 Column Text : BEGIN --> 
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td class="padding" style="padding: 0px 50px; text-align: left; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #000000;"> 
+						
+						<h2>8. Growth Opportunities</h2>
+					  <h4>Blockchain:</h4>
+					  <p>According to Deloitte’s 2020 Global Blockchain Survey, leaders no longer consider blockchain technology merely promising. The survey polled a sample of nearly 1,500 senior executives and suggests that business leaders now see it as integral to organisational innovation. As a result, they are putting money and resources behind the technology in more meaningful and tangible ways. Leaders are increasingly investing in blockchain and digital assets as a top five strategic priority, with 66% forecasting investments of $1million or more in the next 12 months (the survey was conducted between 6 February and 3 March, 2020).</p>
+						
+					  <p>Moreover, according to a ReportLinker article featured on Yahoo! Finance, the Global Blockchain Technology Market size is expected to reach $72 billion by 2026, rising at a market growth of 51.8% CAGR during the forecast period.</p>
+						
+					  <p>Considering the significant advantages and abilities of the XTblock blockchain platform described in this whitepaper, we believe that a sizeable portion of this market can be addressed – and secured.</p>
+						
+					  <p>An important point to consider are the high-potential use cases we have described in this whitepaper, which will powerfully leverage the performance of our blockchain network, and are potential licensing- or subscription-based revenue streams in themselves.</p>
+						
+						
+						<h4>Artificial Intelligence:</h4>
+						
+						<p>Worldwide revenues for the Artificial Intelligence (AI) market, including software, hardware, and services, are forecast to grow 16.4% year over year in 2021 to $327.5 billion, according to the latest release of the International Data Corporation (<a href="https://www.idc.com/" target="_blank">IDC</a>) <a href="https://www.idc.com/tracker/showproductinfo.jsp?prod_id=1841" target="_blank">Worldwide Semiannual Artificial Intelligence Tracker</a>. By 2024, the market is expected to break the $500 billion mark with a five-year compound annual growth rate (CAGR) of 17.5% and total revenues reaching an impressive $554.3 billion.</p>
+						
+						<p><strong>The opportunities for XTblock in this regard are broadly two-fold</strong>: 1) The facilitation of truly Distributed Artificial Intelligence which will enable AI for Collaborative Decision Making, and 2) The development of various advanced instances of Artificial Intelligence </p>
+						
+						<p>Importantly, our efforts involve advancing the state of the art in collaborative AI and the following are the three areas that it will address:</p>
+						
+						<p>i. Human Modelling for Collaboration<br>
+							ii. Complex Decision Making Under Uncertainty<br>
+							iii. Communications and Interaction</p>
+						
+						<h2>9. Roadmap</h2>
+						<p><em>*The below roadmap order may be re-arranged based on development progress.</em></p>
+						<p><em>*At present, we have issued only XTT-b20 tokens on BSC. XTT-e20 token issuance will be announced officially at a later date; therefore, do remain cautious and vigilant regarding malicious actors who may lure you towards any XTT-e20 trade.</em></p>
+
+						<div style="overflow-x:auto;">
+						<table border="1" style="border-collapse: collapse; border-spacing: 0px; vertical-align: top; table-layout: auto !important; text-align: center;">
+                        <tbody>
+                            <tr>
+                            <td colspan="4" style="background-color: #4a86e8; color: white; text-align: center"><strong>XTblock&rsquo;s Roadmap: 3 years</strong></td>
+                          </tr>
+                            <tr style="background-color: #D6D6D6">
+                            <td><strong>2021</strong></td>
+                            <td><strong>Objective</strong></td>
+                            <td><strong>Action</strong></td>
+                            <td align="center"><strong>Completion</strong> <br><strong>aim</strong></td>
+                          </tr>
+                            <tr>
+                            <td><strong>Token</strong></td>
+                            <td><strong>XTblock&rsquo;s Development Fund</strong></td>
+                            <td> Immediate Unlock to begin operations and development without voting </td>
+                            <td> Q2 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Token</strong></td>
+                            <td><strong>List on 1st DEX</strong></td>
+                            <td> List XTT Token on the 1st DEX </td>
+                            <td> Q2 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>dAI</strong> <strong>Gomoku</strong> <strong>DPS</strong> <strong>Test</strong></td>
+                            <td> Testing distributed AI Framework with Gomoku boardgame Distributed Problem Solving solution
+                                to showcase the platform&rsquo;s AI capability </td>
+                            <td> Q3 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Product</strong></td>
+                            <td><strong>XTblock&rsquo;s</strong> <strong>Farming Site to support XTT-b20</strong></td>
+                            <td> Deploy a farming site to support staking XTT-b20 and farming with XTT-b20/ BUSD LP on Binance Smart Chain, along with our token lockers. </td>
+                            <td> Q3 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Governance</strong></td>
+                            <td><strong>Voting</strong> <strong>Site</strong></td>
+                            <td> This is a voting site to support governance of the XTblock platform </td>
+                            <td> Q3 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>Decentralised </strong><strong>Live Streaming Test</strong></td>
+                            <td> Testing Decentralised Video Live Streaming solution to showcase the platform&rsquo;s video streaming capability </td>
+                            <td> Q3 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>XTblock TestNet</strong> <strong>Launch</strong></td>
+                            <td> Launch of XTblock TestNet </td>
+                            <td> Q4 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>Distributed</strong> <strong>Web Protocol</strong></td>
+                            <td> xttp / xttps - XTblock&rsquo;s extended transfer protocol for our distributed web architecture </td>
+                            <td> Q4 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Product</strong></td>
+                            <td><strong>XTblock&rsquo;s Web</strong> <strong>Browser to Support xttp / xttps</strong></td>
+                            <td> Our own web browser that additionally supports our distributed web protocol xttp / xttps </td>
+                            <td> Q4 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>XTblock Explorer</strong></td>
+                            <td> Launch of XTblock Web Explorer </td>
+                            <td> Q4 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Product</strong></td>
+                            <td><strong>Decentralised Live Streaming Platform V1</strong></td>
+                            <td> A Decentralised Live Streaming platform that uses ourhigh-performance blockchain network for live video streaming without its own tokenomics. </td>
+                            <td> Q4 </td>
+                          </tr>
+                            <tr style="background-color: #D6D6D6">
+                            <td><strong>2022</strong></td>
+                            <td><strong>Objective</strong></td>
+                            <td><strong>Action</strong></td>
+                            <td><strong>Completion</strong> <strong>aim</strong></td>
+                          </tr>
+                            <tr>
+                            <td><strong>Product</strong></td>
+                            <td><strong>Decentralised </strong><strong>Crypto Market Analysis Bot</strong></td>
+                            <td> A Decentralised Crypto Market Analysis Bot that uses XTblock&rsquo;s Distributed Problem Solving solution to analyse the crypto market and suggest potential cryptocurrencies for users&rsquo; consideration. </td>
+                            <td> Q1 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>Cyber Security Assessment</strong></td>
+                            <td> Passing the assessment with a top cyber-security firm to certify our tech for banking and government
+                                applications. </td>
+                            <td> Q1 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>XTblock Mainnet Launch</strong></td>
+                            <td> Launch of XTblock MainNet </td>
+                            <td> Q2 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>XTWallet</strong> <strong>App</strong></td>
+                            <td> Launch of XTWallet </td>
+                            <td> Q2 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Product</strong></td>
+                            <td><strong>XTblock&rsquo;s DEX</strong></td>
+                            <td> An automated market maker (AMM) cross-chain protocol that uses XTT as an intermediary exchange token for other tokens that run on different blockchain platforms. </td>
+                            <td> Q3 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Product</strong></td>
+                            <td><strong>Token</strong> <strong>Bridge</strong></td>
+                            <td> A token bridge to swap XTT-b20 with
+                                XTT-e20 (1:1) and XTT tokens on mainnet to allow our users to move their XTT tokens between Binance Smart Chain and Ethereum as well as XTblock networks. </td>
+                            <td> Q3 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Token</strong></td>
+                            <td><strong>List on 2nd DEX</strong></td>
+                            <td> List XTT Tokens on the 2nd DEX </td>
+                            <td> Q3 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Product</strong></td>
+                            <td><strong>Decentralised Live Streaming Platform V2</strong></td>
+                            <td> Further development on our Decentralised Live Streaming platform that uses our high-performance blockchain network for live video streaming, with its own tokenomics. </td>
+                            <td> Q3 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Product</strong></td>
+                            <td><strong>Decentralised <br/>
+                              CryptoTrading</strong> <strong>Tool</strong></td>
+                            <td> Open Decentralised Crypto Trading Tool for public use; the advantage of the decentralised trading bot is that: 1) users will receive more info from these decentralised bots for decision-making; 2) transactions won&rsquo;t have to be grouped with others; 3) there will be no limit to trading pairs; 4) you no longer have to give away your crypto fund credentials to any centralised system. Otherbots will also be introduced to help users monitor the market and their trades, e.g, pump/dump detection, liquidation position monitor, etc. </td>
+                            <td> Q4 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>Platform</strong> <strong>Terminal</strong></td>
+                            <td> Launch Platform Terminal for dApp development &amp; blockchain speed package subscription model </td>
+                            <td> Q4 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>dApp Framework</strong></td>
+                            <td> Publishing dApp Framework with Distributed Computing services (to support Blockchain/ Bot/AI Computing) </td>
+                            <td> Q4 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>Solidity Conversion Tool to XTblock Platform</strong></td>
+                            <td> This tool is to support converting Solidity contracts to XTblock platform. </td>
+                            <td> Q4 </td>
+                          </tr>
+                            <tr style="background-color: #D6D6D6">
+                            <td><strong>2023</strong></td>
+                            <td><strong>Objective</strong></td>
+                            <td><strong>Action</strong></td>
+                            <td><strong>Completion aim</strong></td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>Decentralised Domain Name Service</strong></td>
+                            <td> A Decentralised Domain Name Service that runs with the XTblock blockchain network and xttp / xttps </td>
+                            <td> Q1 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>NFT Framework &amp; NFT Marketplace launch on our DEX</strong></td>
+                            <td> Launch of NFT framework &amp; NFT marketplace on our DEX </td>
+                            <td> Q2 </td>
+                          </tr>
+                            <tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>dAI</strong> <strong>Gomoku</strong> <strong>NN</strong> <strong>Test</strong></td>
+                            <td> Testing distributed AI Framework with Gomoku Neural Network solution. </td>
+                            <td> Q3 </td>
+                          </tr>
+							<tr>
+                            <td><strong>Tech</strong></td>
+                            <td><strong>dAI Chess NN Test</strong></td>
+                            <td>Testing distributed AI Framework with Chess Neural Network solution. </td>
+                            <td> Q4 </td>
+                          </tr>
+							<tr>
+                            <td><strong>Business</strong></td>
+                            <td><strong>100 dApps</strong> </td>
+                            <td>Reach 100 dApps with active users</td>
+                            <td> TBD </td>
+                          </tr>
+							<tr>
+                            <td><strong>Business</strong></td>
+                            <td><strong>1,000,000 Txs Daily</strong></td>
+                            <td>Reach a volume of 1,000,000 <br>transactions daily</td>
+                            <td> TBD </td>
+                          </tr>
+                          </tbody>
+                      </table>
+						</div>
+					  <h2>10. Marketing</h2>
+						
+					  <h4>The approach:</h4>
+					  <p>Our marketing will adopt a fluid approach, based on the evolving needs of the organisation and our technology roadmap. This would involve engagements with best-in-class service providers. At the outset, community development would be key. In terms of developer community nurturing and management, we believe an outbound engagement strategy predicated on getting developers to know and trust our platform (as a long-term platform for them to work on) will be essential. Using specific targeting methodologies for certain developer, corporate and end-user personas and their daily journey profiles, we can segment whom to reach via specific online media channels. One example of a powerful proposition to end-users would be the bots and dApps that carry out specific, highly specialised tasks on our blockchain network, which illustrates the importance of this particular audience as well.</p>
+						
+						<p>By delivering our message consistently and relevantly to this audience, we seek to nurture advocates of our purpose. Our more targeted, specific approach would extend to other aspects as well. Across various aspects of our marketing, adequate research around target demographies and markets will be conducted, with careful segmentation to feed key messaging to specific customer personas, which include developers, enterprises, other organisations and end-users as well.</p>
+						
+					  <h4>The proposition:</h4>
+					  <p>Importantly, we will seek to appeal not only to those familiar with the blockchain and deep-tech realms, but also to a wider audience that includes end-users who care about the powerful positive changes such a platform can deliver across every industry.</p>
+						
+					  <h4>Community development:</h4>
+						<p>Along the course of Testnet and Mainnet development, there will be significant efforts to develop the community, to build interest, encourage adoption and promote advocacy.</p>
+						
+					  <h4>Public relations:</h4>
+					  <p>Public relations will help to create a positive predisposition among our audience, with an aim to engage with credible technology news outlets. The universal and specific applicability across industries and endeavours can be leveraged for significant content generation (also across social media), so that stories remain fresh and also create value in themselves.</p>
+						
+					  <h4>Social media:</h4>
+					  <p>Building on the above points, for social media, apart from the usual channels, we will consider focusing on channels that have a relatively higher number of blockchain, AI and technology enthusiasts, such as Reddit, Medium, Steemit etc. For end-users, more mainstream social media channels will be considered.</p>
+						
+					  <p>At the enterprise level, more specific use-case based marketing material will be developed, and a lead generation and lead nurturing approach may be considered, to drive prospects down the funnel, towards conversion.</p>
+						
+					  <p>With all of the above, we must be mindful that excessive fragmentation and dilution of messaging and channels could be counter-productive, and we will assess the efficacy of these to deliver a more viable and robust marketing mix.</p>
+						
+						<h2>11. Fund Distribution</h2>
+						
+						<p><em>Below is our fund distribution structure for the funds raised from our token swap event:</em></p>
+						
+						<p>Research & Development: 50%<br><br>
+
+						Operations: 10%<br><br>
+
+						Business Development: 10%<br><br>
+
+						Marketing and Sales: 10%<br><br>
+
+						Legal and Audit Fees: 10%<br><br>
+
+						Liquidity Pool: 10%</p>
+
+						<p>----------------</p>
+						
+						<p><strong>Reserved Liquidity:</strong> <strong>60%.</strong> Beyond the above 10% to be raised and committed to our liquidity pool, we will provisionally consider an additional 60% of the funds raised to be added to this liquidity pool, i.e. up to 70% of funds raised. This is important for optimising our DeFi strategies and will be based on certain circumstances at particular times, with the ultimate intention of strengthening our R&D, operations and other important aspects.</p>
+						
+						<h2>12. The Team</h2>
+						<h3>Management team</h3>
+						<h4>ANH LE, FOUNDER & CEO, CTO Core Tech</h4>
+						<p>Anh possesses extensive experience as a technology advisor and independently contracted CTO over 15 years, across numerous complex software-based systems. His unique ability lies in being able to design entirely new Blockchain based system architectures and algorithms. Anh has conducted extensive research across Blockchain and AI, and devised the revolutionary concept of Time Sharding. Anh’s vision is to decentralise AI and revolutionise Blockchain architecture to significantly increase its speed and scalability, remove barriers to blockchain adoption, and help to create a bold new decentralised Bot and AI computing economy.</p>
+						
+						<h4>LEONARD REGO, COO</h4>
+						<p>Over the past 22 years, Leonard has been instrumental in the business positioning and growth of several high-profile regional and international brands, and has helped strengthen their core selling propositions. His particular strength lies in the identification of promising commercial opportunities, and the development of viable go-to-market strategies. Since 2007, as Founder & CEO of Eleven777, he has played a pivotal role with clients such as Emaar, 3M, Messe Frankfurt, Armani Hotel, Tecnotree Telecoms, Jumeirah Group, Masterkey Real Estate Software and several others. As COO of XTblock, he brings the same thinking to leverage the potential of its revolutionary technologies for massive change across every industry.</p>
+						
+						<h4>VENKATA SANJEEVI, CTO - Infrastructure</h4>
+						
+						<p>Venkata Sanjeevi’s CV spans over 20 years in the tech sector, including key roles in management and at senior levels of leadership, for multi-million dollar Enterprise Infrastructure & Operations initiatives. He has repeatedly demonstrated excellence for data centre service providers in a Managed Services and/or Co-location arrangement and ‘Virtual Data Centre over a Public Cloud – AWS’. Notably, he has been instrumental in the development of Complex Information Technology programmes and projects for various business segments, from Aviation and Financial Services to Manufacturing and Trading.</p>
+						
+						<h4>WAYNE DSOUZA, Chief Business Officer</h4>
+						<p>Wayne possesses over 23 years of International Operations and Service Delivery experience with an emphasis on client relations and strategic planning. His career record spans the identification of vital business opportunities, while designing and implementing processes to elevate productivity while keeping operational costs to a minimum.</p>
+						
+						<h3>Technology Advisors</h3>
+						<h4>JORGE SEBASTIAO, TECHNOLOGY ADVISOR</h4>
+						
+						<p>Formerly Huawei EcoSystem CTO, Jorge is a proven expert in a vast range of cutting-edge technologies. He has advised several AI, ML, ICO, STO ventures on tech disruption via AI and Blockchain technology, and engineers practical solutions based on industry standards and best practices. He also designs SLAs to make businesses more resilient using cloud computing and managed services. A renowned and sought-after speaker, Jorge frequently presents at international conferences on Blockchain, AI, Cloud Computing, Cyber Security, Big Data, Managed Services and other aspects of technology.</p>
+						
+						<h4>DR. REX YEAP, TECHNOLOGY ADVISOR</h4>
+						<p>Dr. Yeap is currently a Partner at Invention Capital LLP, which supports the creation and commercialisation of novel inventions as well as investment and incubation of early stage companies. He is also the Vice-Chairman of Business Angel Network (SE Asia) and manages a BANSEA angel fund. Dr. Yeap is part of the Adjunct Faculty at Nanyang Technological University. Since 2006, he has been a SCOPE-IP consultant with the Intellectual Property Office of Singapore. He holds a Master of Science Degree (Distinction) from the University of Leeds and his doctoral research involved the invention of patented hedge fund systems.</p>
+						
+						<h2>Disclaimer</h2>
+						<p style="font-size: 13px">PLEASE READ THE ENTIRETY OF THIS "DISCLAIMER" SECTION CAREFULLY. NOTHING HEREIN CONSTITUTES LEGAL, FINANCIAL, BUSINESS OR TAX ADVICE AND YOU SHOULD CONSULT YOUR OWN LEGAL, FINANCIAL, TAX OR OTHER PROFESSIONAL ADVISOR(S) BEFORE ENGAGING IN ANY ACTIVITY IN CONNECTION HEREWITH. NEITHER THE INITIATIVES AND ENTITIES RELATED TO XTBLOCK, NOR ANY OF THE PROJECT TEAM MEMBERS (THE <strong>XTBLOCK TEAM</strong>) WHO HAVE WORKED ON THE XTBLOCK PROTOCOL (AS DEFINED HEREIN) OR PROJECT TO DEVELOP THE XTBLOCK PROTOCOL IN ANY WAY WHATSOEVER, NOR ANY DISTRIBUTOR/VENDOR OF XTT TOKENS, NOR ANY OTHER INITIATIVES AND ENTITIES RELATED TO XTBLOCK, NOR ANY SERVICE PROVIDER SHALL BE LIABLE FOR ANY KIND OF DIRECT OR INDIRECT DAMAGE OR LOSS WHATSOEVER WHICH YOU MAY SUFFER IN CONNECTION WITH ACCESSING THIS WHITEPAPER, THE WEBSITE AT <a href="HTTPS://XTBLOCK.IO/" target="_blank">HTTPS://XTBLOCK.IO/</a> (THE <strong>WEBSITE</strong>) OR ANY OTHER WEBSITES OR MATERIALS PUBLISHED BY ANY INITIATIVES AND ENTITIES RELATED TO XTBLOCK.</p>
+						
+						<p style="font-size: 14px; color: #5f6b6b; font-weight: bold;">Nature of the Whitepaper</p>
+						
+						<p style="font-size: 13px; line-height: 16px; color: #5f6b6b; padding-bottom: 30px;">The Whitepaper, the Website and any other material provided by any the other initiatives or entities related to XTblock are intended for general informational purposes only (unless specified otherwise) and do not constitute a prospectus, an offer document, an offer of securities, a solicitation for investment, or any offer to sell any product, item or asset (whether digital or otherwise). The information herein may not be exhaustive and does not imply any element of a contractual relationship. There is no assurance as to the accuracy or completeness of such information and no representation, warranty or undertaking is or purported to be provided as to the accuracy or completeness of such information. Where the Whitepaper or the Website or any other material provided by any of the initiatives or entities related to XTblock may include information that has been obtained from third party sources, the initiatives or entities related to XTblock, the Distributor, their respective affiliates and/or the XTblock team have not independently verified the accuracy or completeness of such information. Further, you acknowledge that circumstances may change and that the Whitepaper or the Website may become outdated as a result; and neither the initiatives or entities related to XTblock nor the Distributor are under any obligation to update or correct this document in connection therewith.</p>
+						
+                    </td>
+                  </tr>
+                </table></td>
+            </tr>
+			  
+          </table>
+          <!-- Email Body : END --> 
+          
+          
+          
+          <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]--> 
+        </div>
+      </center></td>
+  </tr>
+</table>
+</body>
+</html>
